@@ -12,5 +12,9 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->version();
+    return view('prueba');
+});
+
+$app->get('/foo', function () {
+    return 'Hello World';
 });
