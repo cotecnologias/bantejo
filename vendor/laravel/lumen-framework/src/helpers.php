@@ -39,7 +39,19 @@ if (! function_exists('app')) {
         return Container::getInstance()->make($make, $parameters);
     }
 }
-
+if (! function_exists('bcrypt')) {
+       /**
+        * Hash the given value.
+        *
+        * @param  string  $value
+        * @param  array   $options
+        * @return string
+        */
+        function bcrypt($value, $options = [])
+        {
+           return app('hash')->make($value, $options);
+        }
+      }
 if (! function_exists('base_path')) {
     /**
      * Get the path to the base of the install.

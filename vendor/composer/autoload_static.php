@@ -22,6 +22,7 @@ class ComposerStaticInitdd53ff37bd03f33dbbd7f7e2eb2a6cd1
         ),
         'W' => 
         array (
+            'Wn\\Generators\\' => 14,
             'Webmozart\\Assert\\' => 17,
         ),
         'S' => 
@@ -101,6 +102,10 @@ class ComposerStaticInitdd53ff37bd03f33dbbd7f7e2eb2a6cd1
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'Wn\\Generators\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wn/lumen-generators/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -308,6 +313,11 @@ class ComposerStaticInitdd53ff37bd03f33dbbd7f7e2eb2a6cd1
     );
 
     public static $classMap = array (
+        'CreateEmployeesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_163810_create_employees_table.php',
+        'CreateOccupationsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_163716_create_occupations_table.php',
+        'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_163240_create_pages_table.php',
+        'CreatePermissionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_163457_create_permissions_table.php',
+        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_004838_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'ExampleTest' => __DIR__ . '/../..' . '/tests/ExampleTest.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
