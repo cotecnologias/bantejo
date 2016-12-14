@@ -9,28 +9,55 @@ use Illuminate\Http\Request;
 | It is a breeze. Simply tell Lumen the URIs it should respond to
 | and give it the Closure to call when that URI is requested.
 |
-
-
-$app->get('/', function () use ($app) {
-    return view('prueba');
-});
-
-$app->get('/foo', function () {
-    return 'Hello World';
-});*/
-
-
-/**
+ /**
  * Routes for resource api_auth
  */
  $app->group(['prefix' => 'Auth'], function() use ($app) {
      $app->post('LogIn', 'Api_authsController@LogIn');
      $app->get('LogOut','Api_authsController@LogOut');
-     $app->get('show', 'Api_authsController@checkRole');
     });
- 
-$app->get('api_auth/show', 'Api_authsController@checkRole');
-$app->get('api_auth/{id}', 'Api_authsController@get');
+    /**
+ * Routes for resource User
+ */
+ $app->group(['prefix' => 'Usuarios','middleware'=>'Api'], function() use ($app) {
+     $app->get('all', 'UserController@all');
+     $app->post('add','UserController@add');
+     $app->get('show/{id}', 'UserController@show');
+     $app->put('update/{id}', 'UserController@update');
+     $app->delete('delete/{id}', 'UserController@delete');
+     $app->get('report/{id}', 'UserController@report');
+    });
+/**
+ * Routes for resource Permission
+ */
+ $app->group(['prefix' => 'Permisos','middleware'=>'Api'], function() use ($app) {
+     $app->get('all', 'PermissionsController@all');
+     $app->post('add','PermissionsController@add');
+     $app->get('show/{id}', 'PermissionsController@show');
+     $app->put('update/{id}', 'PermissionsController@update');
+     $app->delete('delete/{id}', 'PermissionsController@delete');
+     $app->get('report/{id}', 'PermissionsController@report');
+    });
+/**
+ * Routes for resource Page
+ */
+ $app->group(['prefix' => 'Paginas','middleware'=>'Api'], function() use ($app) {
+     $app->get('all', 'PagesController@all');
+     $app->post('add','PagesController@add');
+     $app->get('show/{id}', 'PagesController@show');
+     $app->put('update/{id}', 'PagesController@update');
+     $app->delete('delete/{id}', 'PagesController@delete');
+     $app->get('report/{id}', 'PagesController@report');
+    });
 
-$app->put('api_auth/{id}', 'Api_authsController@put');
-$app->delete('api_auth/{id}', 'Api_authsController@remove');
+/**
+ * Routes for resource occupation
+ */
+ $app->group(['prefix' => 'Puestos','middleware'=>'Api'], function() use ($app) {
+     $app->get('all', 'OccupationsController@all');
+     $app->post('add','OccupationsController@add');
+     $app->get('show/{id}', 'OccupationsController@show');
+     $app->put('update/{id}', 'OccupationsController@update');
+     $app->delete('delete/{id}', 'OccupationsController@delete');
+     $app->get('report/{id}', 'OccupationsController@report');
+    });
