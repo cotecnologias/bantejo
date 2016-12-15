@@ -38,7 +38,7 @@ class OccupationsController extends Controller {
             return response()->json(['error'=>true,'message'=>'error al validar campos.','errors'=>$validator->errors()->all()]);
         }
         else{  
-            $occupation = new App\User;
+            $occupation = new App\Occupation;
             $occupation->name = $data['name'];
             $occupation->save();            
             return response()->json(['error'=>false,'message'=>'puesto agregado correctamente.','id'=>$occupation->id]);

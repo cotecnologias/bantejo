@@ -34,7 +34,7 @@ class UserController extends Controller
             $user = User::where('id',$id)->first(['id','name','email']);
             return response()->json(['error'=>false,'message'=>'ok','user'=>$user]);
         }
-        return response()->json(['error'=>true,'message'=>'no se encontro usuario.','users'=>null]);
+        return response()->json(['error'=>true,'message'=>'no se encontro usuario.','user'=>null]);
     } 
     public function add(Request $data)
     {       

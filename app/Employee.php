@@ -4,14 +4,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model {
 
-	protected $fillable = [];
+	protected $fillable = ['name','lastname','iduser','idoccupation',];
 
-	protected $dates = [];
-
-	public static $rules = [
-		// Validation rules
-	];
-
-	// Relationships
+	protected $hidden = [
+        'deleted_at', 
+    ];
+	protected $dates = ['deleted_at',];
 
 }

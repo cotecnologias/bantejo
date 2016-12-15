@@ -38,7 +38,7 @@ class PagesController extends Controller {
             return response()->json(['error'=>true,'message'=>'error al validar campos.','errors'=>$validator->errors()->all()]);
         }
         else{  
-            $page = new App\User;
+            $page = new App\Page;
             $page->url = $data['url'];
             $page->save();            
             return response()->json(['error'=>false,'message'=>'pagina agregada correctamente.','id'=>$page->id]);

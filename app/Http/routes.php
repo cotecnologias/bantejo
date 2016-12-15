@@ -61,3 +61,15 @@ use Illuminate\Http\Request;
      $app->delete('delete/{id}', 'OccupationsController@delete');
      $app->get('report/{id}', 'OccupationsController@report');
     });
+
+/**
+ * Routes for resource employee
+ */
+  $app->group(['prefix' => 'Empleados','middleware'=>'Api'], function() use ($app) {
+     $app->get('all', 'EmployeesController@all');
+     $app->post('add','EmployeesController@add');
+     $app->get('show/{id}', 'EmployeesController@show');
+     $app->put('update/{id}', 'EmployeesController@update');
+     $app->delete('delete/{id}', 'EmployeesController@delete');
+     $app->get('report/{id}', 'EmployeesController@report');
+    });
