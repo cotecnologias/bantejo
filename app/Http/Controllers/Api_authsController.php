@@ -12,7 +12,7 @@ use App\Occupation;
 
 class Api_authsController extends Controller {
 
-	public function checkAuth(Request $data)
+	protected function checkAuth(Request $data)
 	{
 		# code...
 		$token = $data->header('token');
