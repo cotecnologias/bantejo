@@ -73,3 +73,11 @@ use Illuminate\Http\Request;
      $app->delete('delete/{id}', 'EmployeesController@delete');
      $app->get('report/{id}', 'EmployeesController@report');
     });
+
+ $app->group(['prefix' => 'Bank','middleware'=>'Api'], function() use ($app) {
+     $app->get('all', 'BankController@all');
+     $app->post('add','BankController@add');
+     $app->get('show/{id}', 'BankController@show');
+     $app->put('update/{id}', 'BankController@update');
+     $app->delete('delete/{id}', 'BankController@delete');
+    });
